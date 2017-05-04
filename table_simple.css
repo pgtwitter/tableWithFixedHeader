@@ -1,0 +1,28 @@
+table.table_simple {
+	font-family: Sans-Serif;
+	font-size: 10px;
+	background: #fefefe;
+	border-collapse: collapse;
+	text-align: left;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+table.table_simple th {
+	font-size: 12px;
+	font-weight: normal;
+	color: #019;
+	border-bottom: 2px solid #67b;
+	padding: 10px 8px;
+}
+
+table.table_simple td {
+	border-bottom: 1px solid #78c;
+	color: #78c;
+	padding: 6px 8px;
+}
+
+table.table_simple tbody tr:hover td {
+	color: #009;
+}

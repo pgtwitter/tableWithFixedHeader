@@ -1,0 +1,61 @@
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<script src="tableWithFixedHeader.js"></script>
+	<link rel="stylesheet" href="tableWithFixedHeader.css" />
+	<link rel="stylesheet" href="table_simple.css" />
+	<style>
+		#t0 tbody {
+			height: 100px;
+		}
+
+		#t1 th {
+			white-space: nowrap;
+		}
+
+		#t1 tbody {
+			height: 100px;
+		}
+
+		#t1 td {
+			white-space: nowrap;
+		}
+	</style>
+	<script>
+		function c(id, row, col) {
+			var attr = ' class="tableWithFixedHeader table_simple"';
+			attr += ' id="' + id + '"';
+			var str = '<table ' + attr + '><thead><tr>';
+			for (var i = 0; i < col; i++)
+				str += '<th>ヘッダー ' + i + '</th>';
+			str += '</tr></thead><tbody>';
+			for (var i = 0; i < row; i++) {
+				str += '<tr>';
+				for (var j = 0; j < col; j++)
+					str += '<td>値 ' + i + '-' + j + '</td>';
+				str += '</tr>';
+			}
+			str += '</tbody><table>';
+			return str;
+		}
+		$(document).ready(function() {
+			var str = c('t0', 10, 4);
+			str += '<hr/>' + c('t1', 10, 4)
+			str += '<hr/>' + c('t2', 6, 4)
+			str += '<hr/>' + c('t3', 6, 4)
+			$('body').html(str);
+			$('#t0 tr:first th:nth-child(1)').text('ヘッダー ロングロングロングロング');
+			$('#t1 tr:nth-child(2) td:nth-child(2)').text('値 ロングロングロングロング');
+			$('#t2 tr:first th:nth-child(3)').text('ヘッダー ロングロングロングロング');
+			$('#t3 tr:nth-child(4) td:nth-child(4)').text('値 ロングロングロングロング');
+			$('.tableWithFixedHeader').tableWithFixedHeader();
+		});
+	</script>
+</head>
+
+<body>
+</body>
+
+</html>

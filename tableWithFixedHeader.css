@@ -1,0 +1,12 @@
+.tableWithFixedHeader {
+	table-layout: fixed;
+}
+
+.tableWithFixedHeader thead tr {
+	display: inline-block;
+}
+
+.tableWithFixedHeader tbody {
+	display: inline-block;
+	overflow-y: auto;
+}
